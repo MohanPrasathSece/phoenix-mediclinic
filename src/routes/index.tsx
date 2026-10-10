@@ -5,6 +5,7 @@ import heroImg from "@/assets/hero-clinic.jpg";
 import { whatsappLink } from "@/lib/clinic";
 import { services } from "@/lib/services";
 import { FAQs } from "@/components/FAQs";
+import { TransformationsSection } from "@/components/TransformationsSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -224,6 +225,9 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* TRANSFORMATIONS (BEFORE & AFTER) */}
+      <TransformationsSection />
 
       {/* WHY CHOOSE US */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
