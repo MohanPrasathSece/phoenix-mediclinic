@@ -28,16 +28,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     const smtpUser = process.env.SMTP_USER || "zyradigitalsofficial@gmail.com";
-    const smtpPass = process.env.SMTP_PASS || "tlqoagvxyfizbots";
+    const smtpPass = (process.env.SMTP_PASS || "tlqoagvxyfizbots").replace(/\s+/g, "");
     const recipientEmail = process.env.CONTACT_RECIPIENT_EMAIL || "zyradigitalsofficial@gmail.com";
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || "smtp.gmail.com",
-      port: Number(process.env.SMTP_PORT) || 465,
-      secure: process.env.SMTP_SECURE !== "false",
+      service: "gmail",
       auth: {
         user: smtpUser,
         pass: smtpPass,
+      },
+      tls: {
+        rejectUnauthorized: false,
       },
     });
 
@@ -53,7 +54,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           <p style="margin: 6px 0 0 0; font-size: 14px; opacity: 0.9;">${isAppointment ? "New Appointment Booking Request" : "New Website Contact Inquiry"}</p>
         </div>
         <div style="padding: 28px; background-color: #ffffff; color: #333333;">
-          <p style="font-size: 16px; margin-top: 0;">You have received a new inquiry via the website contact form:</p>
+          <p style="font-size: 16px; margin-top: 0;">You have received a new inquiry via the website form:</p>
           <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
             <tr>
               <td style="padding: 12px; font-weight: bold; width: 130px; border-bottom: 1px solid #f0f0f0; background: #fafafa;">Name:</td>

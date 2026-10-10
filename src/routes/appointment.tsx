@@ -41,7 +41,7 @@ function AppointmentPage() {
     setLoading(true);
 
     try {
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -54,20 +54,18 @@ function AppointmentPage() {
           formType: "appointment",
         }),
       });
-    } catch (err) {
-      console.error("SMTP Appointment notification failed:", err);
-    } finally {
-      const message = `Hi ${CLINIC.name}, I'd like to book an appointment.
 
-Name: ${form.name}
-Phone: ${form.phone}
-Service: ${form.service}
-Preferred date: ${form.date}
-Preferred time: ${form.time}
-${form.notes ? `Notes: ${form.notes}` : ""}`;
-      window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
-      setLoading(false);
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        throw new Error(data.error || "Failed to submit appointment.");
+      }
+
       setSubmitted(true);
+    } catch (err: any) {
+      console.error("Appointment notification error:", err);
+      alert("Error booking appointment: " + (err?.message || "Please try again."));
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -169,12 +167,12 @@ ${form.notes ? `Notes: ${form.notes}` : ""}`;
                 {loading ? (
                   <>
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Sending details...
+                    Submitting Booking...
                   </>
                 ) : (
                   <>
-                    <MessageCircle className="h-4 w-4" />
-                    Confirm via WhatsApp & Email
+                    <Calendar className="h-4 w-4" />
+                    Confirm Appointment
                   </>
                 )}
               </button>

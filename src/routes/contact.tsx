@@ -47,11 +47,7 @@ function ContactPage() {
       setSubmitted(true);
     } catch (err: any) {
       console.error("Form Submit Error:", err);
-      // Fallback: Open WhatsApp directly if SMTP fails
-      const waMsg = `Hi Phoenix Mediclinic,%0A%0AName: ${form.name}%0APhone: ${form.phone}%0AEmail: ${form.email}%0A%0A${form.message}`;
-      window.open(`https://wa.me/${CLINIC.whatsapp}?text=${waMsg}`, "_blank");
-      setErrorMsg("Sent via WhatsApp as backup!");
-      setSubmitted(true);
+      setErrorMsg(err?.message || "Failed to send email. Please try again.");
     } finally {
       setLoading(false);
     }
