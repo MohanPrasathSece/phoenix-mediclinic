@@ -1,10 +1,23 @@
 import * as Accordion from "@radix-ui/react-accordion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MapPin } from "lucide-react";
+import { CLINIC } from "@/lib/clinic";
 
 const faqs = [
   {
     q: "Where is Phoenix Mediclinic located?",
-    a: "We are at 1168, Sector 46, Gurugram, Haryana — easily accessible from across the city with parking available.",
+    a: (
+      <>
+        We are at {CLINIC.address} — easily accessible from across the city with parking available.{" "}
+        <a
+          href={CLINIC.mapsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 font-semibold text-primary underline underline-offset-4 hover:opacity-80"
+        >
+          <MapPin className="h-3.5 w-3.5 inline" /> Open in Google Maps
+        </a>
+      </>
+    ),
   },
   {
     q: "What are your clinic hours?",

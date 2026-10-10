@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle, ShieldCheck, HeartPulse, Sparkles, Users } from "lucide-react";
+import { ArrowRight, MessageCircle, ShieldCheck, HeartPulse, Sparkles, Users, MapPin } from "lucide-react";
 import heroImg from "@/assets/hero-clinic.jpg";
-import { whatsappLink } from "@/lib/clinic";
+import { CLINIC, whatsappLink } from "@/lib/clinic";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -108,6 +108,9 @@ function AboutPage() {
             <Link to="/appointment" className="inline-flex items-center gap-2 rounded-full bg-background px-7 py-3.5 text-sm font-semibold text-primary shadow-soft transition-smooth hover:-translate-y-0.5">
               Book appointment <ArrowRight className="h-4 w-4" />
             </Link>
+            <a href={CLINIC.mapsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-7 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur transition-smooth hover:bg-primary-foreground/20">
+              <MapPin className="h-4 w-4" /> Get Directions
+            </a>
             <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-7 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur transition-smooth hover:bg-primary-foreground/20">
               <MessageCircle className="h-4 w-4" /> WhatsApp us
             </a>

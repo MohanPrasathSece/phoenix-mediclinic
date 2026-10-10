@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, MessageCircle, CheckCircle2, User, Phone } from "lucide-react";
+import { Calendar, Clock, MessageCircle, CheckCircle2, User, Phone, MapPin, Loader2 } from "lucide-react";
 import { CLINIC, whatsappLink } from "@/lib/clinic";
 import { services } from "@/lib/services";
 
@@ -24,6 +24,7 @@ const timeSlots = [
 
 function AppointmentPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -35,9 +36,28 @@ function AppointmentPage() {
 
   const today = new Date().toISOString().split("T")[0];
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const message = `Hi ${CLINIC.name}, I'd like to book an appointment.
+    setLoading(true);
+
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          service: form.service,
+          date: form.date,
+          time: form.time,
+          message: form.notes,
+          formType: "appointment",
+        }),
+      });
+    } catch (err) {
+      console.error("SMTP Appointment notification failed:", err);
+    } finally {
+      const message = `Hi ${CLINIC.name}, I'd like to book an appointment.
 
 Name: ${form.name}
 Phone: ${form.phone}
@@ -45,8 +65,10 @@ Service: ${form.service}
 Preferred date: ${form.date}
 Preferred time: ${form.time}
 ${form.notes ? `Notes: ${form.notes}` : ""}`;
-    window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
-    setSubmitted(true);
+      window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
+      setLoading(false);
+      setSubmitted(true);
+    }
   }
 
   return (
@@ -141,17 +163,38 @@ ${form.notes ? `Notes: ${form.notes}` : ""}`;
 
               <button
                 type="submit"
-                disabled={!form.time}
+                disabled={!form.time || loading}
                 className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft transition-smooth hover:-translate-y-0.5 hover:shadow-glow disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
               >
-                <MessageCircle className="h-4 w-4" />
-                Confirm via WhatsApp
+                {loading ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Sending details...
+                  </>
+                ) : (
+                  <>
+                    <MessageCircle className="h-4 w-4" />
+                    Confirm via WhatsApp & Email
+                  </>
+                )}
               </button>
             </form>
           )}
         </div>
 
         <aside className="mt-10 space-y-5 lg:mt-0">
+          <div className="rounded-3xl border border-border bg-gradient-soft p-6 shadow-soft">
+            <h3 className="font-display text-lg font-semibold text-foreground">Clinic location</h3>
+            <p className="mt-2 text-sm text-muted-foreground">{CLINIC.address}</p>
+            <a
+              href={CLINIC.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex items-center gap-2 text-sm font-semibold text-primary transition-smooth hover:underline"
+            >
+              <MapPin className="h-4 w-4" /> Open in Google Maps
+            </a>
+          </div>
           <div className="rounded-3xl border border-border bg-gradient-soft p-6 shadow-soft">
             <h3 className="font-display text-lg font-semibold text-foreground">Clinic hours</h3>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">

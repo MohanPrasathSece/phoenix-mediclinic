@@ -31,7 +31,14 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <span>{CLINIC.address}</span>
+              <a
+                href={CLINIC.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-smooth hover:text-primary"
+              >
+                {CLINIC.address}
+              </a>
             </li>
             <li>
               <a href={`tel:${CLINIC.phone}`} className="flex items-center gap-2.5 transition-smooth hover:text-primary">
