@@ -7,10 +7,10 @@ import { whatsappLink } from "@/lib/clinic";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Phoenix Mediclinic, Sector 46 Gurugram" },
-      { name: "description", content: "Hair treatment (PRP/GFC), skin & aesthetic care, homeopathy, cupping (Hijama) and physiotherapy at Phoenix Mediclinic, Gurugram." },
-      { property: "og:title", content: "Our Services — Phoenix Mediclinic" },
-      { property: "og:description", content: "Hair, skin, homeopathy, physiotherapy and Hijama — modern + holistic care under one roof." },
+      { title: "Medical Services - Phoenix Mediclinic Sector 46 Gurugram" },
+      { name: "description", content: "Hair Treatment (PRP/GFC), Skin & Aesthetic Care, Homeopathy, Hijama Cupping Therapy and Physiotherapy at Phoenix Mediclinic Gurugram." },
+      { property: "og:title", content: "Our Medical Services - Phoenix Mediclinic Gurugram" },
+      { property: "og:description", content: "Hair, skin, homeopathy, physiotherapy and Hijama - modern & holistic care under one roof." },
     ],
   }),
   component: ServicesPage,
@@ -30,7 +30,7 @@ function ServicesPage() {
             Care across every <span className="text-gradient">speciality</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            From advanced aesthetic procedures to time-tested natural therapies — discover treatments
+            From advanced aesthetic procedures to time-tested natural therapies - discover treatments
             designed around you.
           </p>
         </div>

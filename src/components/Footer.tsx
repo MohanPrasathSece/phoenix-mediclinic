@@ -8,10 +8,17 @@ export function Footer() {
     <footer className="border-t border-border bg-gradient-soft">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 lg:grid-cols-4 lg:px-8">
         <div className="lg:col-span-2 space-y-4">
-          <Logo />
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="inline-block cursor-pointer transition-smooth hover:opacity-90"
+            aria-label="Phoenix Mediclinic Home"
+          >
+            <Logo />
+          </Link>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
             Advanced skin, hair, and holistic care in Sector 46, Gurugram. Modern medicine meets
-            natural healing — delivered with warmth and expertise.
+            natural healing - delivered with warmth and expertise.
           </p>
         </div>
 

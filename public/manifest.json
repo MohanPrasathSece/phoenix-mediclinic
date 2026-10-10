@@ -1,0 +1,16 @@
+{
+  "short_name": "Phoenix Clinic",
+  "name": "Phoenix Mediclinic - Advanced Skin, Hair & Holistic Care",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "type": "image/png",
+      "sizes": "192x192 512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#0f766e",
+  "display": "standalone",
+  "description": "Multi-specialty clinic in Sector 46, Gurugram. Dermatology, Hair PRP/GFC, Homeopathy, Physiotherapy & Hijama Cupping."
+}

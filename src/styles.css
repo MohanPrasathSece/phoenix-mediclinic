@@ -44,7 +44,7 @@
 :root {
   --radius: 0.875rem;
 
-  /* Base — clean white & deep medical blue */
+  /* Base - clean white & deep medical blue */
   --background: oklch(1 0 0);
   --foreground: oklch(0.18 0.03 250);
 

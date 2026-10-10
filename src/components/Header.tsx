@@ -39,7 +39,12 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
-        <Link to="/" aria-label="Phoenix Mediclinic Home">
+        <Link
+          to="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Phoenix Mediclinic Home"
+          className="cursor-pointer transition-smooth hover:opacity-90"
+        >
           <Logo />
         </Link>
 

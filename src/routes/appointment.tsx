@@ -8,9 +8,9 @@ import { services } from "@/lib/services";
 export const Route = createFileRoute("/appointment")({
   head: () => ({
     meta: [
-      { title: "Book Appointment — Phoenix Mediclinic, Gurugram" },
-      { name: "description", content: "Book your appointment at Phoenix Mediclinic, Sector 46 Gurugram. Choose a service, date and time — we confirm via WhatsApp." },
-      { property: "og:title", content: "Book Appointment — Phoenix Mediclinic" },
+      { title: "Book Appointment - Phoenix Mediclinic, Gurugram" },
+      { name: "description", content: "Book your appointment online at Phoenix Mediclinic, Sector 46 Gurugram. Select a service, date and time." },
+      { property: "og:title", content: "Book Appointment - Phoenix Mediclinic Gurugram" },
       { property: "og:description", content: "Schedule your visit online for skin, hair, homeopathy, physiotherapy or Hijama." },
     ],
   }),
@@ -95,7 +95,7 @@ function AppointmentPage() {
               </div>
               <h2 className="mt-5 font-display text-2xl font-bold text-foreground">Request sent!</h2>
               <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
-                We've opened WhatsApp with your appointment details. Please send the message to confirm your slot — our team will respond shortly.
+                We've received your appointment request. Our team will review your preferred date and time and respond shortly.
               </p>
               <button
                 onClick={() => setSubmitted(false)}
@@ -196,13 +196,13 @@ function AppointmentPage() {
           <div className="rounded-3xl border border-border bg-gradient-soft p-6 shadow-soft">
             <h3 className="font-display text-lg font-semibold text-foreground">Clinic hours</h3>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li className="flex justify-between"><span>Mon — Sat</span><span className="font-medium text-foreground">10 AM — 8 PM</span></li>
+              <li className="flex justify-between"><span>Mon - Sat</span><span className="font-medium text-foreground">10 AM - 8 PM</span></li>
               <li className="flex justify-between"><span>Sunday</span><span className="font-medium text-foreground">By appointment</span></li>
             </ul>
           </div>
           <div className="rounded-3xl border border-border bg-background p-6 shadow-soft">
             <h3 className="font-display text-lg font-semibold text-foreground">Need help?</h3>
-            <p className="mt-2 text-sm text-muted-foreground">Call us directly or message on WhatsApp — we respond fast.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Call us directly or send a message - we respond fast.</p>
             <a href={`tel:${CLINIC.phone}`} className="mt-4 flex items-center gap-2 text-sm font-semibold text-primary">
               <Phone className="h-4 w-4" /> {CLINIC.phoneDisplay}
             </a>

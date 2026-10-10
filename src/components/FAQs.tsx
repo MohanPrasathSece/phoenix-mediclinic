@@ -7,7 +7,7 @@ const faqs = [
     q: "Where is Phoenix Mediclinic located?",
     a: (
       <>
-        We are at {CLINIC.address} — easily accessible from across the city with parking available.{" "}
+        We are at {CLINIC.address} - easily accessible from across the city with parking available.{" "}
         <a
           href={CLINIC.mapsUrl}
           target="_blank"
@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Is consultation required before a treatment?",
-    a: "Yes — every treatment begins with a personalised consultation so our doctors can recommend the safest and most effective plan for you.",
+    a: "Yes - every treatment begins with a personalised consultation so our doctors can recommend the safest and most effective plan for you.",
   },
 ];
 

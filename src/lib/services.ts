@@ -28,7 +28,7 @@ export const services: Service[] = [
     title: "Hair Treatment",
     tagline: "PRP, GFC & Scalp Care",
     description:
-      "Advanced regenerative therapies for hair fall, thinning, and scalp disorders — restoring growth at the root.",
+      "Advanced regenerative therapies for hair fall, thinning, and scalp disorders - restoring growth at the root.",
     bullets: ["PRP & GFC Therapy", "Hair fall & scalp disorders", "Customised hair growth plans"],
     image: serviceHair,
     icon: Scissors,
@@ -38,7 +38,7 @@ export const services: Service[] = [
     title: "Skin & Aesthetics",
     tagline: "Radiance, Refined",
     description:
-      "Modern aesthetic procedures for clearer, brighter, healthier skin — performed with the latest technology.",
+      "Modern aesthetic procedures for clearer, brighter, healthier skin - performed with the latest technology.",
     bullets: ["Laser Hair Removal", "Carbon Laser Facial", "Hydra Facial"],
     image: serviceSkin,
     icon: Sparkles,
@@ -48,7 +48,7 @@ export const services: Service[] = [
     title: "Homeopathy",
     tagline: "Gentle, Natural Healing",
     description:
-      "Time-tested homeopathic care for chronic and acute conditions — safe, individualised treatment plans.",
+      "Time-tested homeopathic care for chronic and acute conditions - safe, individualised treatment plans.",
     bullets: ["Chronic disease management", "Acute illness care", "Lifestyle counselling"],
     image: serviceHomeopathy,
     icon: Leaf,
@@ -58,7 +58,7 @@ export const services: Service[] = [
     title: "Cupping (Hijama)",
     tagline: "Detox & Pain Relief",
     description:
-      "Traditional cupping therapy practised with modern hygiene standards — relief from pain and deep detoxification.",
+      "Traditional cupping therapy practised with modern hygiene standards - relief from pain and deep detoxification.",
     bullets: ["Pain relief therapy", "Detoxification", "Improved circulation"],
     image: serviceCupping,
     icon: CircleDot,
@@ -68,7 +68,7 @@ export const services: Service[] = [
     title: "Physiotherapy",
     tagline: "Move Without Limits",
     description:
-      "Personalised rehabilitation and mobility programmes — recover strength, posture, and pain-free movement.",
+      "Personalised rehabilitation and mobility programmes - recover strength, posture, and pain-free movement.",
     bullets: ["Rehabilitation", "Mobility & posture care", "Sports & injury recovery"],
     image: servicePhysio,
     icon: Activity,

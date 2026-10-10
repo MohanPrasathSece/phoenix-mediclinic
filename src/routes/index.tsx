@@ -10,9 +10,9 @@ import { TransformationsSection } from "@/components/TransformationsSection";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Phoenix Mediclinic — Skin, Hair & Holistic Care in Gurugram" },
-      { name: "description", content: "Multi-specialty clinic in Sector 46, Gurugram. Skin, hair, homeopathy, physiotherapy & Hijama. Book on WhatsApp." },
-      { property: "og:title", content: "Phoenix Mediclinic — Sector 46, Gurugram" },
+      { title: "Phoenix Mediclinic - Best Skin, Hair & Holistic Care in Sector 46 Gurugram" },
+      { name: "description", content: "Top multi-specialty clinic in Sector 46 Gurugram. Hair PRP/GFC, Skin & Aesthetic treatments, Homeopathy, Physiotherapy & Hijama Cupping." },
+      { property: "og:title", content: "Phoenix Mediclinic - Sector 46, Gurugram" },
       { property: "og:description", content: "Advanced skin & hair treatments, homeopathy, physiotherapy and cupping therapy. Personalised, holistic care." },
     ],
   }),
@@ -24,7 +24,7 @@ const reasons = [
   { icon: Cpu, title: "Advanced Equipment", text: "Latest medical technology for precise, effective treatments." },
   { icon: HeartPulse, title: "Holistic Approach", text: "Modern medicine paired with natural therapies for whole-body wellness." },
   { icon: Sparkles, title: "Personalised Plans", text: "Treatment tailored to your body, history and goals." },
-  { icon: Wallet, title: "Transparent Pricing", text: "Honest, upfront costs — no hidden surprises, ever." },
+  { icon: Wallet, title: "Transparent Pricing", text: "Honest, upfront costs - no hidden surprises, ever." },
   { icon: ShieldCheck, title: "Safe & Hygienic", text: "Strict protocols and sterile environments at every step." },
 ];
 
@@ -51,7 +51,7 @@ function HomePage() {
               <span className="text-gradient">skin, hair & wellbeing</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Phoenix Mediclinic blends modern medical technology with natural healing —
+              Phoenix Mediclinic blends modern medical technology with natural healing -
               delivering safe, effective and personalised care under one roof.
             </p>
 
@@ -139,7 +139,7 @@ function HomePage() {
               </p>
               <p>
                 We are committed to providing safe, effective, and personalised medical care using
-                the latest technology combined with natural treatment approaches — so you receive
+                the latest technology combined with natural treatment approaches - so you receive
                 the right care, the right way.
               </p>
             </div>
@@ -267,7 +267,7 @@ function HomePage() {
             Ready to feel better?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-primary-foreground/85">
-            Book your appointment online or message us on WhatsApp — we'll find a time that works.
+            Book your appointment online or contact us directly - we'll find a time that works.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link

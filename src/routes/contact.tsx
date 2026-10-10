@@ -6,10 +6,10 @@ import { CLINIC, whatsappLink } from "@/lib/clinic";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Phoenix Mediclinic, Sector 46 Gurugram" },
+      { title: "Contact Us - Phoenix Mediclinic, Sector 46 Gurugram" },
       { name: "description", content: "Visit Phoenix Mediclinic at 1168, Sector 46, Gurugram. Call +91 83360 05000 or send an email message." },
-      { property: "og:title", content: "Contact Phoenix Mediclinic" },
-      { property: "og:description", content: "Address, phone, WhatsApp and a quick contact form — get in touch with our team." },
+      { property: "og:title", content: "Contact Phoenix Mediclinic Gurugram" },
+      { property: "og:description", content: "Address, phone, WhatsApp and a quick contact form - get in touch with our team." },
     ],
   }),
   component: ContactPage,
@@ -118,7 +118,7 @@ function ContactPage() {
           <div className="rounded-3xl border border-border bg-background p-8 shadow-card lg:col-span-2 lg:p-10">
             <h2 className="font-display text-2xl font-bold text-foreground">Send us a message</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Fill out the form — message is delivered directly to our inbox via secure SMTP.
+              Fill out the form - message is delivered directly to our inbox via secure SMTP.
             </p>
 
             {submitted ? (

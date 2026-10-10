@@ -7,17 +7,17 @@ import { CLINIC, whatsappLink } from "@/lib/clinic";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Phoenix Mediclinic, Sector 46 Gurugram" },
-      { name: "description", content: "Learn about Phoenix Mediclinic — a multi-specialty clinic in Gurugram blending modern medicine with holistic healing." },
+      { title: "About Us - Phoenix Mediclinic, Sector 46 Gurugram" },
+      { name: "description", content: "Learn about Phoenix Mediclinic - a multi-specialty clinic in Gurugram blending modern medicine with holistic healing." },
       { property: "og:title", content: "About Phoenix Mediclinic" },
-      { property: "og:description", content: "Multi-specialty clinic in Sector 46 Gurugram — skin, hair, homeopathy, physiotherapy & Hijama." },
+      { property: "og:description", content: "Multi-specialty clinic in Sector 46 Gurugram - skin, hair, homeopathy, physiotherapy & Hijama." },
     ],
   }),
   component: AboutPage,
 });
 
 const values = [
-  { icon: HeartPulse, title: "Holistic Healing", text: "We treat the whole person — combining modern medicine with natural therapies." },
+  { icon: HeartPulse, title: "Holistic Healing", text: "We treat the whole person - combining modern medicine with natural therapies." },
   { icon: ShieldCheck, title: "Safety First", text: "Sterile environments, certified protocols and the highest hygiene standards." },
   { icon: Sparkles, title: "Personalised Care", text: "Every treatment plan is tailored to your body, history and goals." },
   { icon: Users, title: "Patient-Centric", text: "We listen first. Your comfort and trust guide every decision we make." },
@@ -35,7 +35,7 @@ function AboutPage() {
               A trusted name in <span className="text-gradient">holistic healthcare</span>
             </h1>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Phoenix Mediclinic is a multi-specialty clinic in Sector 46, Gurugram — built on the belief that great medicine is both scientific and human.
+              Phoenix Mediclinic is a multi-specialty clinic in Sector 46, Gurugram - built on the belief that great medicine is both scientific and human.
             </p>
           </motion.div>
         </div>
@@ -57,11 +57,11 @@ function AboutPage() {
                 healing through homeopathy, physiotherapy and Hijama cupping therapy.
               </p>
               <p>
-                Our team blends years of medical expertise with the latest clinical technology — so
+                Our team blends years of medical expertise with the latest clinical technology - so
                 every patient receives safe, effective and deeply personal care, all under one roof.
               </p>
               <p>
-                We rise — like the phoenix in our name — to a higher standard of healing every day.
+                We rise - like the phoenix in our name - to a higher standard of healing every day.
               </p>
             </div>
             <Link
@@ -102,7 +102,7 @@ function AboutPage() {
             Visit Phoenix Mediclinic
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-primary-foreground/85">
-            Book a consultation with our specialists — we'd love to meet you.
+            Book a consultation with our specialists - we'd love to meet you.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link to="/appointment" className="inline-flex items-center gap-2 rounded-full bg-background px-7 py-3.5 text-sm font-semibold text-primary shadow-soft transition-smooth hover:-translate-y-0.5">
