@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { MessageCircle, ArrowRight, ShieldCheck, Sparkles, Stethoscope, HeartPulse, Wallet, Cpu, Calendar } from "lucide-react";
+import { MessageCircle, ArrowRight, ShieldCheck, Sparkles, Stethoscope, HeartPulse, Wallet, Cpu, Calendar, UserCheck, Award } from "lucide-react";
 import heroImg from "@/assets/hero-clinic.jpg";
+import doctorImg from "@/assets/Doctor.jpg";
 import { whatsappLink } from "@/lib/clinic";
 import { services } from "@/lib/services";
 import { FAQs } from "@/components/FAQs";
@@ -94,26 +95,22 @@ function HomePage() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="relative"
+            className="relative mx-auto w-full max-w-[340px] sm:max-w-[380px]"
           >
             <div className="absolute inset-0 rounded-[2rem] bg-gradient-primary blur-2xl opacity-20" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-card">
-              <img
-                src={heroImg}
-                alt="Friendly doctor at Phoenix Mediclinic, Gurugram"
-                width={1536}
-                height={1024}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-5 -left-5 hidden rounded-2xl border border-border bg-background p-4 shadow-card sm:block">
+            <img
+              src={doctorImg}
+              alt="Lead Doctor at Phoenix Mediclinic, Sector 46 Gurugram"
+              className="relative w-full h-auto rounded-[2rem] border border-border/60 shadow-card object-contain"
+            />
+            <div className="absolute -bottom-5 -left-5 hidden rounded-2xl border border-border bg-background/95 p-3.5 shadow-card backdrop-blur sm:block">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-soft">
                   <ShieldCheck className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <div className="text-xs text-muted-foreground">Trusted care</div>
-                  <div className="text-sm font-semibold text-foreground">Safe · Sterile · Certified</div>
+                  <div className="text-xs text-muted-foreground">Lead Doctor</div>
+                  <div className="text-sm font-semibold text-foreground">Expert Personalised Care</div>
                 </div>
               </div>
             </div>
@@ -121,12 +118,12 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ABOUT */}
+      {/* ABOUT & MEET DOCTOR */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              About the clinic
+              About the clinic & doctor
             </span>
             <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Where modern medicine meets <span className="text-gradient">natural healing</span>
@@ -138,11 +135,25 @@ function HomePage() {
                 holistic healing through homeopathy, physiotherapy, and cupping therapy (Hijama).
               </p>
               <p>
-                We are committed to providing safe, effective, and personalised medical care using
-                the latest technology combined with natural treatment approaches - so you receive
-                the right care, the right way.
+                Under expert doctor guidance, we are committed to providing safe, effective, and
+                personalised medical care using state-of-the-art technology paired with integrative healing protocols.
               </p>
             </div>
+
+            <div className="mt-8 rounded-2xl border border-border/80 bg-gradient-soft p-5 shadow-soft">
+              <div className="flex items-start gap-4">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary">
+                  <UserCheck className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="font-display text-base font-semibold text-foreground">Doctor-Led Consultations</h3>
+                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                    Every treatment starts with an in-depth consultation by our experienced doctor to build a safe, effective roadmap tailored to your health goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <Link
               to="/services"
               className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-smooth hover:gap-2.5"
@@ -151,21 +162,31 @@ function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { n: "5+", l: "Specialities" },
-              { n: "10k+", l: "Happy patients" },
-              { n: "12+", l: "Years combined experience" },
-              { n: "Modern", l: "Technology & equipment" },
-            ].map((s) => (
-              <div
-                key={s.l}
-                className="rounded-2xl border border-border bg-gradient-soft p-6 shadow-soft transition-smooth hover:-translate-y-1 hover:shadow-card"
-              >
-                <div className="font-display text-3xl font-bold text-gradient">{s.n}</div>
-                <div className="mt-2 text-sm text-muted-foreground">{s.l}</div>
-              </div>
-            ))}
+          <div className="relative">
+            <div className="overflow-hidden rounded-[2rem] border border-border shadow-card aspect-[4/3]">
+              <img
+                src={heroImg}
+                alt="Phoenix Mediclinic Interior"
+                loading="lazy"
+                width={1536}
+                height={1024}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="mt-4 grid grid-cols-2 gap-4">
+              {[
+                { n: "5+", l: "Specialities" },
+                { n: "100%", l: "Doctor Supervised" },
+              ].map((s) => (
+                <div
+                  key={s.l}
+                  className="rounded-xl border border-border bg-background p-4 shadow-soft"
+                >
+                  <div className="font-display text-2xl font-bold text-gradient">{s.n}</div>
+                  <div className="mt-1 text-xs text-muted-foreground">{s.l}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

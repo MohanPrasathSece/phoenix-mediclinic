@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Clock, MessageCircle, CheckCircle2, User, Phone, MapPin, Loader2 } from "lucide-react";
+import { Calendar, Clock, MessageCircle, CheckCircle2, User, Phone, MapPin, Loader2, Stethoscope } from "lucide-react";
+import doctorImg from "@/assets/Doctor.jpg";
 import { CLINIC, whatsappLink } from "@/lib/clinic";
 import { services } from "@/lib/services";
 
@@ -181,6 +182,20 @@ function AppointmentPage() {
         </div>
 
         <aside className="mt-10 space-y-5 lg:mt-0">
+          <div className="overflow-hidden rounded-3xl border border-border bg-background shadow-soft">
+            <img src={doctorImg} alt="Lead Doctor consultation" className="w-full h-auto border-b border-border object-contain block" />
+            <div className="p-5">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
+                <Stethoscope className="h-3.5 w-3.5" />
+                Doctor Consultation
+              </span>
+              <h3 className="mt-3 font-display text-base font-semibold text-foreground">Personalized Doctor Care</h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                Your consultation will be conducted directly by our experienced lead doctor at Sector 46, Gurugram.
+              </p>
+            </div>
+          </div>
+
           <div className="rounded-3xl border border-border bg-gradient-soft p-6 shadow-soft">
             <h3 className="font-display text-lg font-semibold text-foreground">Clinic location</h3>
             <p className="mt-2 text-sm text-muted-foreground">{CLINIC.address}</p>

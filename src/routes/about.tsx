@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle, ShieldCheck, HeartPulse, Sparkles, Users, MapPin } from "lucide-react";
+import { ArrowRight, MessageCircle, ShieldCheck, HeartPulse, Sparkles, Users, MapPin, Award, Stethoscope, Calendar } from "lucide-react";
 import heroImg from "@/assets/hero-clinic.jpg";
+import doctorImg from "@/assets/Doctor.jpg";
 import { CLINIC, whatsappLink } from "@/lib/clinic";
 
 export const Route = createFileRoute("/about")({
@@ -41,40 +42,107 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* MEET OUR DOCTOR */}
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <div className="overflow-hidden rounded-[2rem] border border-border shadow-card">
-            <img src={heroImg} alt="Phoenix Mediclinic interior" loading="lazy" width={1536} height={1024} className="h-full w-full object-cover" />
+          <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[380px]">
+            <div className="absolute inset-0 rounded-[2rem] bg-gradient-primary blur-2xl opacity-15" />
+            <img
+              src={doctorImg}
+              alt="Lead Doctor at Phoenix Mediclinic"
+              loading="lazy"
+              className="relative w-full h-auto rounded-[2rem] border border-border shadow-card object-contain"
+            />
+            <div className="absolute -bottom-5 -right-5 hidden rounded-2xl border border-border bg-background/95 p-3.5 shadow-card backdrop-blur sm:block">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-soft text-primary">
+                  <Award className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-xs text-muted-foreground">Expert Physician</div>
+                  <div className="text-sm font-semibold text-foreground">Aesthetic & Holistic Care</div>
+                </div>
+              </div>
+            </div>
           </div>
+
           <div>
-            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Our story
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              Lead Specialist
+            </span>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Meet Our Lead Doctor
             </h2>
-            <div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground">
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
               <p>
-                Founded with a vision to bring world-class care to Gurugram, Phoenix Mediclinic
-                offers advanced skin and hair treatments, modern aesthetic procedures, and natural
-                healing through homeopathy, physiotherapy and Hijama cupping therapy.
+                At Phoenix Mediclinic, patient care is led by our experienced doctor who brings an integrative approach to healing—combining clinical dermatological procedures, PRP/GFC hair treatments, homeopathy, physiotherapy, and Hijama cupping.
               </p>
               <p>
-                Our team blends years of medical expertise with the latest clinical technology - so
-                every patient receives safe, effective and deeply personal care, all under one roof.
-              </p>
-              <p>
-                We rise - like the phoenix in our name - to a higher standard of healing every day.
+                Believing that true wellness comes from addressing root causes rather than just masking symptoms, every patient receives a comprehensive, personalized assessment and evidence-backed care plan.
               </p>
             </div>
-            <Link
-              to="/services"
-              className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-smooth hover:gap-2.5"
-            >
-              Explore our services <ArrowRight className="h-4 w-4" />
-            </Link>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                to="/appointment"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft transition-smooth hover:-translate-y-0.5 hover:shadow-glow"
+              >
+                <Calendar className="h-4 w-4" />
+                Book Consultation
+              </Link>
+              <a
+                href={whatsappLink("Hi Doctor, I would like to book a consultation at Phoenix Mediclinic.")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-6 py-3.5 text-sm font-semibold text-foreground transition-smooth hover:border-primary hover:text-primary"
+              >
+                <MessageCircle className="h-4 w-4" />
+                WhatsApp Doctor
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* OUR STORY */}
       <section className="bg-gradient-soft py-20 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+            <div className="overflow-hidden rounded-[2rem] border border-border shadow-card aspect-[4/3]">
+              <img src={heroImg} alt="Phoenix Mediclinic interior" loading="lazy" width={1536} height={1024} className="h-full w-full object-cover" />
+            </div>
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Our Journey</span>
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Our story
+              </h2>
+              <div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground">
+                <p>
+                  Founded with a vision to bring world-class care to Gurugram, Phoenix Mediclinic
+                  offers advanced skin and hair treatments, modern aesthetic procedures, and natural
+                  healing through homeopathy, physiotherapy and Hijama cupping therapy.
+                </p>
+                <p>
+                  Our team blends years of medical expertise with the latest clinical technology - so
+                  every patient receives safe, effective and deeply personal care, all under one roof.
+                </p>
+                <p>
+                  We rise - like the phoenix in our name - to a higher standard of healing every day.
+                </p>
+              </div>
+              <Link
+                to="/services"
+                className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-smooth hover:gap-2.5"
+              >
+                Explore our services <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VALUES */}
+      <section className="py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Our values</span>
@@ -102,7 +170,7 @@ function AboutPage() {
             Visit Phoenix Mediclinic
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-primary-foreground/85">
-            Book a consultation with our specialists - we'd love to meet you.
+            Book a consultation with our doctor - we'd love to meet you.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link to="/appointment" className="inline-flex items-center gap-2 rounded-full bg-background px-7 py-3.5 text-sm font-semibold text-primary shadow-soft transition-smooth hover:-translate-y-0.5">
@@ -120,3 +188,4 @@ function AboutPage() {
     </>
   );
 }
+

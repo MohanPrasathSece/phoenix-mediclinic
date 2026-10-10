@@ -66,7 +66,17 @@ export function Footer() {
       <div className="border-t border-border/60">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-5 py-5 text-xs text-muted-foreground sm:flex-row lg:px-8">
           <p>© {new Date().getFullYear()} {CLINIC.name}. All rights reserved.</p>
-          <p>Designed with care for your wellbeing.</p>
+          <p>
+            Developed by{" "}
+            <a
+              href="https://www.zyradigitals.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary transition-smooth hover:underline"
+            >
+              Zyra Digitals
+            </a>
+          </p>
         </div>
       </div>
     </footer>
